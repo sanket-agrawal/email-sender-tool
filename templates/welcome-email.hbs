@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to {{companyName}}!</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: #f4f4f7;
+      color: #51545E;
+      margin: 0;
+      padding: 0;
+    }
+    .email-wrapper {
+      width: 100%;
+      background-color: #f4f4f7;
+      padding: 40px 0;
+    }
+    .email-content {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .email-header {
+      background-color: #0d6efd;
+      color: white;
+      padding: 24px;
+      text-align: center;
+    }
+    .email-body {
+      padding: 32px;
+    }
+    .email-footer {
+      text-align: center;
+      font-size: 12px;
+      color: #6B7280;
+      padding: 24px;
+    }
+    .btn {
+      background-color: #0d6efd;
+      color: #ffffff;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    h1 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-wrapper">
+    <div class="email-content">
+      <div class="email-header">
+        <h1>Welcome to {{companyName}}!</h1>
+      </div>
+      <div class="email-body">
+        <p>Hi {{name}},</p>
+        <p>We're thrilled to have you on board. At {{companyName}}, we’re committed to providing you with the best experience possible.</p>
+        <p>To get started, click the button below:</p>
+        <a href="{{ctaLink}}" class="btn">{{ctaText}}</a>
+        <p>If you have any questions, just reply to this email—we're here to help!</p>
+        <p>Cheers,<br>The {{companyName}} Team</p>
+      </div>
+    </div>
+    <div class="email-footer">
+      &copy; {{year}} {{companyName}}. All rights reserved.
+    </div>
+  </div>
+</body>
+</html>
