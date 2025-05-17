@@ -8,25 +8,25 @@ import { fileURLToPath } from 'url';
 dotenv.config()
 
 const transport = nodemailer.createTransport({
-    host: process.env.EMAIL_HOST,
+    service : "gmail",
     port: 465,
     secure : false,
     auth: {
-      user: "noreply@laurengroup.ai",
-      pass: "LITL5775",
+      user: process.env.EMAIL_USERNAME,
+      pass: process.env.EMAIL_PASSWORD,
     }
 })
 
-const sendEmail = async (to,data) => {
+const sendEmail = async ({to =  null,data = null}) => {
     try {
         const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const filePath = path.join(__dirname, 'templates', 'welcome-email.hbs');
+const filePath = path.join(__dirname,'..','common','templates', 'welcome-email.hbs');
   const source = await fs.readFile(filePath, 'utf8');
   const template = handlebars.compile(source);
   const html = template(data);
         const mailOptions = {
-            from: `Sanket Agrawal <noreply@laurengroup.ai>`,
+            from: `Sanket Agrawal <mailsanketagrawal@gmail.com>`,
       to,
       subject : "test",
       html

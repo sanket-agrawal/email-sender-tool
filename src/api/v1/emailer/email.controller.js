@@ -1,15 +1,20 @@
+import sendEmail from "../../../config/mailer.js";
+
 const emailController = {
 
     send : async (req, res) => {
         try {
+            await sendEmail({
+                data : '<h1>test</h1>',
+                to : 'thesanketagrawal@gmail.com'
+            })
             res.status(200).json({
-                message :"working",
-                data : []
+                message :"working"
             })
         } catch (ex) {
             console.log(ex);
             res.status(400).json({
-                message :"failed"
+                message :"Something went wrong"
             })
         }
     }
